@@ -85,6 +85,9 @@ func makeAPICall(url cryptoExchangeAPI, provider string) []Currency {
 func generatePairs(data []Currency) string {
 	var buffer bytes.Buffer
 	for _, obj := range data {
+		if obj.BaseCurrency == "" || obj.QuoteCurrency == "" {
+			continue
+		}
 		buffer.WriteString(fmt.Sprintf("%s/%s\n", obj.BaseCurrency, obj.QuoteCurrency))
 	}
 	return buffer.String()
