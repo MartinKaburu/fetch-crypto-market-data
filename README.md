@@ -3,9 +3,12 @@ Go app to record crypto market trading symbols
 
 ## Run Locally
 
-- ```bash
+```bash
 go get
+
 go build main.go
+
 chmod +x main
+
 ./main
 ```
